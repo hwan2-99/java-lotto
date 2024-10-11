@@ -21,6 +21,6 @@ class WinningLottoTest {
         Lotto lotto = new Lotto(lottoNumbers);
         WinningLotto winningLotto = new WinningLotto(winningNumbers);
 
-        assertThat(winningLotto.calculateWinningResult(lotto)).isEqualTo(LottoReward.fourth);
+        assertThat(winningLotto.calculateWinningResult(lotto)).isEqualTo(LottoReward.FOURTH);
     }
 }
