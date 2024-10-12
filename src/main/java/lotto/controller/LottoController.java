@@ -16,8 +16,8 @@ public class LottoController {
     public void run() {
         LottoGenerator lottoGenerator = new LottoGenerator(InputView.getPurchasePrice());
         ResultView.printPurchaseLottoCount(lottoGenerator.getLottos());
-        WinningLotto winningLotto = generateWinningLotto();
-        LottoResult lottoResult = lottoGenerator.calculateWinningLotto(winningLotto);
+        LottoResult lottoResult = lottoGenerator.calculateWinningLotto(generateWinningLotto());
+
         ResultView.printWinningStatistics(lottoResult.getResultMap());
         ResultView.printLottoProfit(lottoResult.calculateProfit());
     }

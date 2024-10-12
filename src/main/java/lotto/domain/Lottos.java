@@ -22,7 +22,7 @@ public class Lottos {
         while (lottoNumbers.size() != LOTTO_SIZE) {
             lottoNumbers.add(LottoNumber.generateLottoNumber());
         }
-        return new Lotto(new ArrayList<>(lottoNumbers));
+        return new Lotto(lottoNumbers);
     }
 
     public List<Lotto> getLottos() {
