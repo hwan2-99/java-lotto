@@ -1,6 +1,7 @@
 package lotto.controller;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import lotto.domain.LottoGenerator;
 import lotto.domain.LottoNumber;
@@ -24,9 +25,9 @@ public class LottoController {
 
     private WinningLotto generateWinningLotto() {
         final List<Integer> winningNumbers = InputView.getWinningNumbers();
-        List<LottoNumber> winningLottos = winningNumbers.stream()
+        Set<LottoNumber> winningLottos = winningNumbers.stream()
                 .map(LottoNumber::generateByValue)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
         return new WinningLotto(winningLottos);
     }
 }

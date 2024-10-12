@@ -15,9 +15,9 @@ class WinningLottoTest {
                 .map(LottoNumber::generateByValue)
                 .collect(Collectors.toSet());
 
-        List<LottoNumber> winningNumbers = Stream.of(1, 2, 3, 13, 15, 16)
+        Set<LottoNumber> winningNumbers = Stream.of(1, 2, 3, 13, 15, 16)
                 .map(LottoNumber::generateByValue)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
 
         Lotto lotto = new Lotto(lottoNumbers);
         WinningLotto winningLotto = new WinningLotto(winningNumbers);
