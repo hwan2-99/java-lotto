@@ -25,6 +25,7 @@ public class ResultView {
         for (Lotto lotto : lottos.getLottos()) {
             System.out.println(lotto.getLottoNumbers().stream()
                     .map(LottoNumber::getNumber)
+                    .sorted()
                     .collect(Collectors.toList()));
         }
         System.out.println();

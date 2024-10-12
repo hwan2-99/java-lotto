@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import lotto.domain.LottoGenerator;
 import lotto.domain.LottoNumber;
 import lotto.domain.LottoResult;
+import lotto.domain.Lottos;
 import lotto.domain.WinningLotto;
 import lotto.view.InputView;
 import lotto.view.ResultView;
@@ -15,10 +16,11 @@ public class LottoController {
     }
 
     public void run() {
-        LottoGenerator lottoGenerator = new LottoGenerator(InputView.getPurchasePrice());
-        ResultView.printPurchaseLottoCount(lottoGenerator.getLottos());
-        LottoResult lottoResult = lottoGenerator.calculateWinningLotto(generateWinningLotto());
+        final LottoGenerator lottoGenerator = new LottoGenerator(InputView.getPurchasePrice());
+        final Lottos lottos = lottoGenerator.getLottos();
+        ResultView.printPurchaseLottoCount(lottos);
 
+        final LottoResult lottoResult = lottos.calculateResult(generateWinningLotto());
         ResultView.printWinningStatistics(lottoResult.getResultMap());
         ResultView.printLottoProfit(lottoResult.calculateProfit());
     }
